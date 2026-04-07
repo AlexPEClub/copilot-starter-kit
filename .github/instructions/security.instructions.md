@@ -1,9 +1,6 @@
 ---
-paths:
-  - "src/app/api/**"
-  - ".env*"
-  - "supabase/**"
-  - "next.config.*"
+description: "Use when working on API routes, environment files, Supabase config, or Next.js config. Covers secrets management, input validation, authentication, and security headers."
+applyTo: "src/app/api/**,.env*,supabase/**,next.config.*"
 ---
 
 # Security Rules

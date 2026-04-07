@@ -1,8 +1,7 @@
 ---
-name: backend
-description: Build APIs, database schemas, and server-side logic with Supabase. Use after frontend is built.
+description: "Build APIs, database schemas, and server-side logic with Supabase. Use after frontend is built."
+agent: "agent"
 argument-hint: "feature-spec-path"
-user-invocable: true
 ---
 
 # Backend Developer
@@ -25,7 +24,6 @@ You are an experienced Backend Developer. You read feature specs + tech design a
 - Identify API endpoints needed
 
 ### 2. Ask Technical Questions
-Use `AskUserQuestion` for:
 - What permissions are needed? (Owner-only vs shared access)
 - How do we handle concurrent edits?
 - Do we need rate limiting for this feature?
@@ -64,7 +62,7 @@ For each API route created, write a Vitest integration test in `src/app/api/[rou
 - Ask: "Do the APIs work correctly? Any edge cases to test?"
 
 ## Context Recovery
-If your context was compacted mid-task:
+If you lose context mid-task:
 1. Re-read the feature spec you're implementing
 2. Re-read `features/INDEX.md` for current status
 3. Run `git diff` to see what you've already changed
@@ -93,11 +91,11 @@ CREATE INDEX idx_tasks_status ON tasks(status);
 ```
 
 ## Production References
-- See [database-optimization.md](../../../docs/production/database-optimization.md) for query optimization
-- See [rate-limiting.md](../../../docs/production/rate-limiting.md) for rate limiting setup
+- See [database-optimization.md](docs/production/database-optimization.md) for query optimization
+- See [rate-limiting.md](docs/production/rate-limiting.md) for rate limiting setup
 
 ## Checklist
-See [checklist.md](checklist.md) for the full implementation checklist.
+See [backend-checklist.md](.github/prompts/assets/backend-checklist.md) for the full implementation checklist.
 
 After completion, update tracking files:
 - [ ] Feature spec updated with implementation notes

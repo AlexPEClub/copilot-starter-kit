@@ -1,8 +1,8 @@
 # AI Coding Starter Kit
 
-> Build production-ready web apps faster with AI-powered Skills handling Requirements, Architecture, Development, QA, and Deployment.
+> Build production-ready web apps faster with AI-powered Prompts handling Requirements, Architecture, Development, QA, and Deployment.
 
-This template uses [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with modern Skills, Rules, and Sub-Agents to provide a complete AI-powered development workflow.
+This template uses [GitHub Copilot](https://docs.github.com/en/copilot) with Prompts, Instructions, and Custom Agents to provide a complete AI-powered development workflow.
 
 ## Quick Start
 
@@ -36,14 +36,14 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### 4. Initialize Your Project
 
-Open Claude Code and describe your project. The `/requirements` skill automatically detects that this is a fresh project and enters **Init Mode**:
+Open Copilot Chat and describe your project. The `/requirements` prompt automatically detects that this is a fresh project and enters **Init Mode**:
 
 ```
 /requirements I want to build a project management tool for small teams
 where users can create projects, assign tasks, and track progress.
 ```
 
-The skill will:
+The prompt will:
 1. Ask interactive questions to clarify your vision, target users, and MVP scope
 2. Create your **Product Requirements Document** (`docs/PRD.md`)
 3. Break the project into individual features (Single Responsibility)
@@ -51,11 +51,11 @@ The skill will:
 5. Update **feature tracking** (`features/INDEX.md`)
 6. Recommend which feature to build first
 
-You don't need to put everything in the first prompt - a brief description is enough. The skill asks follow-up questions interactively.
+You don't need to put everything in the first prompt - a brief description is enough. The prompt asks follow-up questions interactively.
 
 ### 5. Build Features
 
-After project initialization, build features one at a time using skills:
+After project initialization, build features one at a time using prompts:
 
 ```
 /architecture    Design the tech approach for features/PROJ-1-user-auth.md
@@ -65,16 +65,16 @@ After project initialization, build features one at a time using skills:
 /deploy          Deploy to Vercel
 ```
 
-Each skill suggests the next step when it finishes. Handoffs are always user-initiated.
+Each prompt suggests the next step when it finishes. Handoffs are always user-initiated.
 
 To add more features later, run `/requirements` again - it detects the existing PRD and adds a single feature.
 
 ---
 
-## Available Skills
+## Available Prompts
 
-| Skill | Command | What It Does |
-|-------|---------|-------------|
+| Prompt | Command | What It Does |
+|--------|---------|-------------|
 | Requirements Engineer | `/requirements` | Creates feature specs with user stories, acceptance criteria, edge cases |
 | Solution Architect | `/architecture` | Designs PM-friendly tech architecture (no code, only high-level design) |
 | Frontend Developer | `/frontend` | Builds UI with React, Tailwind CSS, and shadcn/ui |
@@ -83,12 +83,12 @@ To add more features later, run `/requirements` again - it detects the existing 
 | DevOps | `/deploy` | Deploys to Vercel with production-ready checks |
 | Help | `/help` | Context-aware guide: shows where you are and what to do next |
 
-### How Skills Work
+### How It Works
 
-- **Skills** are defined in `.claude/skills/` and auto-discovered by Claude Code
-- **Rules** in `.claude/rules/` are auto-applied based on file context (no manual loading)
-- **Sub-Agents** run heavy tasks (frontend, backend, QA) in isolated contexts for cost efficiency
-- **CLAUDE.md** provides project context automatically at every session start
+- **Prompts** are defined in `.github/prompts/` and auto-discovered by Copilot (type `/` in chat)
+- **Instructions** in `.github/instructions/` are auto-applied based on file context (via `applyTo` globs)
+- **Custom Agents** in `.github/agents/` run as specialized subagents for frontend, backend, and QA
+- **copilot-instructions.md** in `.github/` provides project context automatically at every session start
 
 ---
 
@@ -134,27 +134,30 @@ Every skill reads this file at start and updates it when done, preventing duplic
 
 ```
 ai-coding-starter-kit/
-+-- CLAUDE.md                        <-- Auto-loaded project context
-+-- .claude/
-|   +-- settings.json                <-- Team permissions (committed)
-|   +-- settings.local.json          <-- Personal overrides (gitignored)
-|   +-- rules/                       <-- Auto-applied coding rules
-|   |   +-- general.md                   Git workflow, feature tracking
-|   |   +-- frontend.md                  shadcn/ui, component standards
-|   |   +-- backend.md                   RLS, validation, queries
-|   |   +-- security.md                  Secrets, headers, auth
-|   +-- skills/                      <-- Invocable workflows (/command)
-|   |   +-- requirements/SKILL.md        /requirements
-|   |   +-- architecture/SKILL.md        /architecture
-|   |   +-- frontend/SKILL.md            /frontend (runs as sub-agent)
-|   |   +-- backend/SKILL.md             /backend (runs as sub-agent)
-|   |   +-- qa/SKILL.md                  /qa (runs as sub-agent)
-|   |   +-- deploy/SKILL.md              /deploy
-|   |   +-- help/SKILL.md                /help
-|   +-- agents/                      <-- Sub-agent configs
-|       +-- frontend-dev.md              Model, tools, limits
-|       +-- backend-dev.md
-|       +-- qa-engineer.md
++-- .github/
+|   +-- copilot-instructions.md      <-- Auto-loaded project context
+|   +-- instructions/                <-- Auto-applied coding rules (via applyTo)
+|   |   +-- general.instructions.md      Git workflow, feature tracking
+|   |   +-- frontend.instructions.md     shadcn/ui, component standards
+|   |   +-- backend.instructions.md      RLS, validation, queries
+|   |   +-- security.instructions.md     Secrets, headers, auth
+|   +-- prompts/                     <-- Invocable workflows (/command)
+|   |   +-- requirements.prompt.md       /requirements
+|   |   +-- architecture.prompt.md       /architecture
+|   |   +-- frontend.prompt.md           /frontend
+|   |   +-- backend.prompt.md            /backend
+|   |   +-- qa.prompt.md                 /qa
+|   |   +-- deploy.prompt.md             /deploy
+|   |   +-- help.prompt.md              /help
+|   |   +-- assets/                  <-- Templates & checklists
+|   |       +-- feature-template.md      Feature spec template
+|   |       +-- qa-test-template.md      QA results template
+|   |       +-- frontend-checklist.md    Frontend completion checklist
+|   |       +-- backend-checklist.md     Backend completion checklist
+|   +-- agents/                      <-- Custom agent configs
+|       +-- frontend-dev.agent.md        Frontend specialist
+|       +-- backend-dev.agent.md         Backend specialist
+|       +-- qa-engineer.agent.md         QA specialist
 +-- features/                        <-- Feature specifications
 |   +-- INDEX.md                         Status tracking
 |   +-- README.md                        Spec format documentation
@@ -188,7 +191,7 @@ Define your product vision in `docs/PRD.md`:
 
 ### 2. Build Your First Feature
 
-Run `/requirements` with your feature idea. The skill will:
+Run `/requirements` with your feature idea. The prompt will:
 - Ask interactive questions to clarify requirements
 - Create a feature spec in `features/PROJ-1-name.md`
 - Update `features/INDEX.md` with the new feature
@@ -203,7 +206,7 @@ npx shadcn@latest add [component-name]
 
 ### 4. Production Setup (first deployment)
 
-When you're ready to deploy, the `/deploy` skill guides you through:
+When you're ready to deploy, the `/deploy` prompt guides you through:
 - Vercel setup and deployment
 - Error tracking with Sentry
 - Security headers configuration
@@ -215,26 +218,26 @@ See `docs/production/` for detailed setup guides.
 
 ## How It Works Under the Hood
 
-### Skills (`.claude/skills/`)
-Each skill is a structured workflow that Claude Code discovers automatically. Skills can run inline (in the main conversation) or as forked sub-agents (isolated context window).
+### Prompts (`.github/prompts/`)
+Each prompt is a structured workflow that Copilot discovers automatically when you type `/` in chat. Prompts define the step-by-step process for each role (Requirements Engineer, Architect, Developer, QA, DevOps).
 
-| Skill | Execution | Why? |
-|-------|-----------|------|
-| `/requirements` | Inline | Needs live interaction with user |
-| `/architecture` | Inline | Short output, user reviews in real-time |
-| `/frontend` | Sub-agent (forked) | Heavy file editing, lots of output |
-| `/backend` | Sub-agent (forked) | Heavy file editing, SQL, API code |
-| `/qa` | Sub-agent (forked) | Systematic testing, lots of output |
-| `/deploy` | Inline | Deployment needs user oversight |
-| `/help` | Inline | Quick status check and guidance |
+| Prompt | What It Does |
+|--------|-------------|
+| `/requirements` | Interactive feature specification with user stories and acceptance criteria |
+| `/architecture` | PM-friendly tech design (no code, visual component trees) |
+| `/frontend` | Build UI with shadcn/ui, Tailwind, responsive design |
+| `/backend` | APIs, database schemas, RLS policies, Zod validation |
+| `/qa` | Systematic testing, E2E tests, security audit |
+| `/deploy` | Vercel deployment with production-ready checks |
+| `/help` | Quick status check and next-step guidance |
 
-### Rules (`.claude/rules/`)
-Coding standards that are auto-applied based on which files Claude is working with. No manual loading needed.
+### Instructions (`.github/instructions/`)
+Coding standards that are auto-applied based on which files Copilot is working with (via `applyTo` globs). No manual loading needed.
 
-### Sub-Agent Configs (`.claude/agents/`)
-Lightweight configurations that define model, tool access, and turn limits for forked skills.
+### Custom Agents (`.github/agents/`)
+Specialized agents for frontend, backend, and QA work with restricted tool sets for focused, efficient execution.
 
-### CLAUDE.md
+### copilot-instructions.md
 Auto-loaded at every session start. Contains tech stack, conventions, and references to PRD and feature index.
 
 ---
@@ -245,7 +248,7 @@ AI agents work best with clean, structured context - not longer prompts. This te
 
 ### State lives in files, not in memory
 
-Every skill reads `features/INDEX.md` and the relevant feature spec at start. After context compaction or a new session, nothing is lost - the agent simply re-reads the files. Progress tracking, acceptance criteria, and tech designs all live in markdown files, not in the conversation.
+Every prompt reads `features/INDEX.md` and the relevant feature spec at start. After a new session, nothing is lost - the agent simply re-reads the files. Progress tracking, acceptance criteria, and tech designs all live in markdown files, not in the conversation.
 
 ### Context is layered
 
@@ -253,23 +256,19 @@ Not everything is loaded at once. Information is layered by relevance:
 
 | Layer | What | When loaded |
 |-------|------|-------------|
-| `CLAUDE.md` | Tech stack, conventions, commands | Every session (auto) |
-| `.claude/rules/` | Coding standards | When editing matching files (auto) |
-| Skill `SKILL.md` | Workflow instructions | When skill is invoked |
-| Feature spec | Requirements, AC, tech design | On demand (skill reads it) |
+| `copilot-instructions.md` | Tech stack, conventions, commands | Every session (auto) |
+| `.github/instructions/` | Coding standards | When editing matching files (auto via `applyTo`) |
+| Prompt `.prompt.md` | Workflow instructions | When prompt is invoked (via `/command`) |
+| Feature spec | Requirements, AC, tech design | On demand (prompt reads it) |
 | `docs/production/` | Deployment guides | Only when referenced |
-
-### Context is isolated
-
-Heavy implementation skills (`/frontend`, `/backend`, `/qa`) run as **forked sub-agents** with their own context window. Research noise from one skill doesn't pollute another. Each fork starts clean and loads only what it needs.
 
 ### Context recovery is built in
 
-All forked skills include a **Context Recovery** section: if the context is compacted mid-task, the agent re-reads the feature spec, checks `git diff` for progress, and continues without restarting or duplicating work.
+All prompts include a **Context Recovery** section: if context is lost mid-task, the agent re-reads the feature spec, checks `git diff` for progress, and continues without restarting or duplicating work.
 
 ### Always read, never guess
 
-A global rule (`rules/general.md`) enforces: always read a file before modifying it, never assume contents from memory, verify import paths and API routes by reading. This prevents hallucinated code references - the most common source of AI coding errors.
+A global instruction (`instructions/general.instructions.md`) enforces: always read a file before modifying it, never assume contents from memory, verify import paths and API routes by reading. This prevents hallucinated code references - the most common source of AI coding errors.
 
 ---
 
@@ -277,11 +276,11 @@ A global rule (`rules/general.md`) enforces: always read a file before modifying
 
 This template is designed as a starting point. Customize it for your team:
 
-1. **Edit CLAUDE.md** - Add your project-specific conventions and build commands
-2. **Edit docs/PRD.md** - Define your product vision and roadmap
-3. **Edit .claude/rules/** - Adjust coding standards for your team
-4. **Edit .claude/skills/** - Modify workflows to match your process
-5. **Edit .claude/settings.json** - Configure team permissions
+1. **Edit `.github/copilot-instructions.md`** - Add your project-specific conventions and build commands
+2. **Edit `docs/PRD.md`** - Define your product vision and roadmap
+3. **Edit `.github/instructions/`** - Adjust coding standards for your team
+4. **Edit `.github/prompts/`** - Modify workflows to match your process
+5. **Edit `.github/agents/`** - Configure agent specializations
 
 ---
 

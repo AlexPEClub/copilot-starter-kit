@@ -1,6 +1,6 @@
 # AI Coding Starter Kit
 
-> A Next.js template with an AI-powered development workflow using specialized skills for Requirements, Architecture, Frontend, Backend, QA, and Deployment.
+> A Next.js template with an AI-powered development workflow using specialized prompts for Requirements, Architecture, Frontend, Backend, QA, and Deployment.
 
 ## Tech Stack
 
@@ -38,7 +38,7 @@ docs/
 
 ## Feature Tracking
 
-All features tracked in `features/INDEX.md`. Every skill reads it at start and updates it when done. Feature specs live in `features/PROJ-X-name.md`.
+All features tracked in `features/INDEX.md`. Every prompt reads it at start and updates it when done. Feature specs live in `features/PROJ-X-name.md`.
 
 ## Key Conventions
 
@@ -63,8 +63,8 @@ npm run test:all     # Both test suites
 
 ## Product Context
 
-@docs/PRD.md
+See [docs/PRD.md](../docs/PRD.md)
 
 ## Feature Overview
 
-@features/INDEX.md
+See [features/INDEX.md](../features/INDEX.md)

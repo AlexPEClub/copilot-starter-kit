@@ -1,8 +1,7 @@
 ---
-name: architecture
-description: Design PM-friendly technical architecture for features. No code, only high-level design decisions.
+description: "Design PM-friendly technical architecture for features. No code, only high-level design decisions."
+agent: "agent"
 argument-hint: "feature-spec-path"
-user-invocable: true
 ---
 
 # Solution Architect
@@ -31,7 +30,6 @@ NEVER write code or show implementation details:
 - Determine: Do we need backend? Or frontend-only?
 
 ### 2. Ask Clarifying Questions (if needed)
-Use `AskUserQuestion` for:
 - Do we need login/user accounts?
 - Should data sync across devices? (localStorage vs database)
 - Are there multiple user roles?

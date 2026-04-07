@@ -1,3 +1,8 @@
+---
+description: "Use when working on any file. Covers feature tracking, git conventions, human-in-the-loop, status updates, file handling, and handoffs between prompts."
+applyTo: "**"
+---
+
 # General Project Rules
 
 ## New Project Detection (MANDATORY)
@@ -37,7 +42,7 @@ Before starting ANY work, check if the project has been initialized:
 After completing work on any feature, you MUST update tracking files. Follow this exact sequence:
 
 1. **Read** the feature spec (`features/PROJ-X-*.md`) and `features/INDEX.md` BEFORE editing
-2. **Write** your changes using the Edit tool — do NOT just describe what you would write
+2. **Write** your changes — do NOT just describe what you would write
 3. **Re-read** the file AFTER editing to verify the changes are actually present
 4. **If changes are missing**, repeat step 2 — never claim updates were made without verifying
 
@@ -57,18 +62,17 @@ After completing work on any feature, you MUST update tracking files. Follow thi
   - **Deployed**: after `/deploy`
 
 **NEVER do this:**
-- Do NOT say "I've updated the feature spec" without actually calling the Edit tool
+- Do NOT say "I've updated the feature spec" without actually editing the file
 - Do NOT summarize changes in chat as a substitute for writing them to the file
 - Do NOT skip updates because "it's obvious" or "minor"
 
 ## File Handling
 - ALWAYS read a file before modifying it - never assume contents from memory
-- After context compaction, re-read files before continuing work
 - When unsure about current project state, read `features/INDEX.md` first
 - Run `git diff` to verify what has already been changed in this session
 - Never guess at import paths, component names, or API routes - verify by reading
 
-## Handoffs Between Skills
-- After completing a skill, suggest the next skill to the user
-- Format: "Next step: Run `/skillname` to [action]"
+## Handoffs Between Prompts
+- After completing a prompt, suggest the next prompt to the user
+- Format: "Next step: Run `/promptname` to [action]"
 - Handoffs are always user-initiated, never automatic

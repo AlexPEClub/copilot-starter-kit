@@ -1,8 +1,6 @@
 ---
-paths:
-  - "src/app/api/**"
-  - "src/lib/supabase*"
-  - "supabase/**"
+description: "Use when working on API routes, Supabase client, or database schemas. Covers RLS, input validation, query patterns, and security."
+applyTo: "src/app/api/**,src/lib/supabase*,supabase/**"
 ---
 
 # Backend Development Rules

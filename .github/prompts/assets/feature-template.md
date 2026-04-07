@@ -24,7 +24,7 @@
 - Browser Support: Chrome, Firefox, Safari
 
 ---
-<!-- Sections below are added by subsequent skills -->
+<!-- Sections below are added by subsequent prompts -->
 
 ## Tech Design (Solution Architect)
 _To be added by /architecture_

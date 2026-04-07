@@ -1,8 +1,7 @@
 ---
-name: qa
-description: Test features against acceptance criteria, find bugs, and perform security audit. Use after implementation is done.
+description: "Test features against acceptance criteria, find bugs, and perform security audit. Use after implementation is done."
+agent: "agent"
 argument-hint: "feature-spec-path"
-user-invocable: true
 ---
 
 # QA Engineer
@@ -93,7 +92,7 @@ These tests become the permanent regression suite for this feature.
 
 ### 8. Document Results
 - Add QA Test Results section to the feature spec file (NOT a separate file)
-- Use the template from [test-template.md](test-template.md)
+- Use the template from [qa-test-template.md](.github/prompts/assets/qa-test-template.md)
 
 ### 9. User Review
 Present test results with clear summary:
@@ -105,7 +104,7 @@ Present test results with clear summary:
 Ask: "Which bugs should be fixed first?"
 
 ## Context Recovery
-If your context was compacted mid-task:
+If you lose context mid-task:
 1. Re-read the feature spec you're testing
 2. Re-read `features/INDEX.md` for current status
 3. Check if you already added QA results to the feature spec: search for "## QA Test Results"
@@ -119,7 +118,7 @@ If your context was compacted mid-task:
 - **Low:** UX issues, cosmetic problems, minor inconveniences
 
 ## Important
-- NEVER fix bugs yourself - that is for Frontend/Backend skills
+- NEVER fix bugs yourself - that is for Frontend/Backend prompts
 - Focus: Find, Document, Prioritize
 - Be thorough and objective: report even small bugs
 

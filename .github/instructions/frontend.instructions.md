@@ -1,9 +1,6 @@
 ---
-paths:
-  - "src/components/**"
-  - "src/app/**/page.tsx"
-  - "src/app/**/layout.tsx"
-  - "src/hooks/**"
+description: "Use when working on frontend components, pages, layouts, or hooks. Covers shadcn/ui usage, import patterns, component standards, and auth best practices."
+applyTo: "src/components/**,src/app/**/page.tsx,src/app/**/layout.tsx,src/hooks/**"
 ---
 
 # Frontend Development Rules

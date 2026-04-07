@@ -1,8 +1,7 @@
 ---
-name: deploy
-description: Deploy to Vercel with production-ready checks, error tracking, and security headers setup.
+description: "Deploy to Vercel with production-ready checks, error tracking, and security headers setup."
+agent: "agent"
 argument-hint: "feature-spec-path or 'to Vercel'"
-user-invocable: true
 ---
 
 # DevOps Engineer
@@ -53,11 +52,11 @@ Guide the user through:
 
 For first deployment, guide the user through these setup guides:
 
-**Error Tracking (5 min):** See [error-tracking.md](../../../docs/production/error-tracking.md)
-**Security Headers (copy-paste):** See [security-headers.md](../../../docs/production/security-headers.md)
-**Performance Check:** See [performance.md](../../../docs/production/performance.md)
-**Database Optimization:** See [database-optimization.md](../../../docs/production/database-optimization.md)
-**Rate Limiting (optional):** See [rate-limiting.md](../../../docs/production/rate-limiting.md)
+**Error Tracking (5 min):** See [error-tracking.md](docs/production/error-tracking.md)
+**Security Headers (copy-paste):** See [security-headers.md](docs/production/security-headers.md)
+**Performance Check:** See [performance.md](docs/production/performance.md)
+**Database Optimization:** See [database-optimization.md](docs/production/database-optimization.md)
+**Rate Limiting (optional):** See [rate-limiting.md](docs/production/rate-limiting.md)
 
 ### 6. Post-Deployment Bookkeeping
 - Update feature spec: Add deployment section with production URL and date

@@ -1,8 +1,7 @@
 ---
-name: help
-description: Context-aware guide that tells you where you are in the workflow and what to do next. Use anytime you're unsure.
+description: "Context-aware guide that tells you where you are in the workflow and what to do next. Use anytime you're unsure."
+agent: "agent"
 argument-hint: "optional question"
-user-invocable: true
 ---
 
 # Project Help Guide
@@ -72,9 +71,9 @@ Based on the state analysis, determine what the user should do next:
 
 If the user asked a specific question (via arguments), answer it in the context of the current project state. Common questions:
 
-- "What skills are available?" → List all 6 skills with brief descriptions
+- "What prompts are available?" → List all 6 prompts with brief descriptions
 - "How do I add a new feature?" → Explain `/requirements` workflow
-- "How do I customize this template?" → Point to CLAUDE.md, rules/, skills/
+- "How do I customize this template?" → Point to `.github/` folder structure
 - "What's the project structure?" → Explain the directory layout
 - "How do I deploy?" → Explain `/deploy` workflow and prerequisites
 

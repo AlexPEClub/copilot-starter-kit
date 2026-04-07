@@ -1,7 +1,7 @@
 {
   "name": "ai-coding-starter-kit",
   "version": "1.0.0",
-  "description": "AI Coding Starter Kit with AI Agent Team System for Claude Code",
+  "description": "AI Coding Starter Kit with AI Agent Team System for GitHub Copilot",
   "private": true,
   "scripts": {
     "dev": "next dev",
