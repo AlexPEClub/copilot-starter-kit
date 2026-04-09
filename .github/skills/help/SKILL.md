@@ -1,6 +1,6 @@
 ---
-description: "Context-aware guide that tells you where you are in the workflow and what to do next. Use anytime you're unsure."
-agent: "agent"
+name: help
+description: "Context-aware project guide that tells you where you are in the workflow and what to do next. Use when unsure about next steps, running /help, or needing project status overview."
 argument-hint: "optional question"
 ---
 
@@ -71,7 +71,7 @@ Based on the state analysis, determine what the user should do next:
 
 If the user asked a specific question (via arguments), answer it in the context of the current project state. Common questions:
 
-- "What prompts are available?" → List all 6 prompts with brief descriptions
+- "What skills are available?" → List all 6 skills with brief descriptions
 - "How do I add a new feature?" → Explain `/requirements` workflow
 - "How do I customize this template?" → Point to `.github/` folder structure
 - "What's the project structure?" → Explain the directory layout
@@ -98,6 +98,3 @@ If the user asked a specific question, answer that FIRST, then show the status o
 ## Important
 - Be concise and actionable
 - Always give the exact command to run
-- Reference specific file paths
-- Don't explain the framework architecture in detail unless asked
-- Focus on: "Here's where you are, here's what to do next"

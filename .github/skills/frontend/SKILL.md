@@ -1,6 +1,6 @@
 ---
-description: "Build UI components with React, Next.js, Tailwind CSS, and shadcn/ui. Use after architecture is designed."
-agent: "agent"
+name: frontend
+description: "Build UI components with React, Next.js, Tailwind CSS, and shadcn/ui. Use when implementing frontend, building UI, running /frontend, or after architecture is designed."
 argument-hint: "feature-spec-path"
 ---
 
@@ -78,7 +78,7 @@ If no backend needed:
 > "Frontend is done! Next step: Run `/qa` to test this feature against its acceptance criteria."
 
 ## Checklist
-See [frontend-checklist.md](.github/prompts/assets/frontend-checklist.md) for the full implementation checklist.
+See [frontend-checklist.md](./assets/frontend-checklist.md) for the full implementation checklist.
 
 After completion, update tracking files:
 - [ ] Feature spec updated with implementation notes

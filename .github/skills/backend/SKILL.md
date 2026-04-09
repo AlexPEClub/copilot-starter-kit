@@ -1,6 +1,6 @@
 ---
-description: "Build APIs, database schemas, and server-side logic with Supabase. Use after frontend is built."
-agent: "agent"
+name: backend
+description: "Build APIs, database schemas, and server-side logic with Supabase. Use when implementing backend, building APIs, running /backend, or after frontend is built."
 argument-hint: "feature-spec-path"
 ---
 
@@ -95,7 +95,7 @@ CREATE INDEX idx_tasks_status ON tasks(status);
 - See [rate-limiting.md](docs/production/rate-limiting.md) for rate limiting setup
 
 ## Checklist
-See [backend-checklist.md](.github/prompts/assets/backend-checklist.md) for the full implementation checklist.
+See [backend-checklist.md](./assets/backend-checklist.md) for the full implementation checklist.
 
 After completion, update tracking files:
 - [ ] Feature spec updated with implementation notes

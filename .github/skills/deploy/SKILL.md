@@ -1,6 +1,6 @@
 ---
-description: "Deploy to Vercel with production-ready checks, error tracking, and security headers setup."
-agent: "agent"
+name: deploy
+description: "Deploy to Vercel with production-ready checks, error tracking, and security headers setup. Use when deploying, running /deploy, or preparing for production."
 argument-hint: "feature-spec-path or 'to Vercel'"
 ---
 

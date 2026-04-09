@@ -1,6 +1,6 @@
 ---
-description: "Create detailed feature specifications with user stories, acceptance criteria, and edge cases. Use when starting a new feature or initializing a new project."
-agent: "agent"
+name: requirements
+description: "Create detailed feature specifications with user stories, acceptance criteria, and edge cases. Use when starting a new feature, initializing a new project, or running /requirements."
 argument-hint: "project-description or feature-idea"
 ---
 
@@ -54,7 +54,7 @@ Present the feature breakdown to the user for review:
 
 ### Phase 4: Create Feature Specs
 For each feature (after user approval of the breakdown):
-- Create a feature spec file using [the feature template](.github/prompts/assets/feature-template.md)
+- Create a feature spec file using [the feature template](./assets/feature-template.md)
 - Save to `/features/PROJ-X-feature-name.md`
 - Include user stories, acceptance criteria, and edge cases
 - Document dependencies on other features
@@ -112,7 +112,7 @@ Ask about edge cases with concrete options:
 - What happens when the user is offline?
 
 ### Phase 3: Write Feature Spec
-- Use the template from [feature-template.md](.github/prompts/assets/feature-template.md)
+- Use the template from [feature-template.md](./assets/feature-template.md)
 - Create the spec in `/features/PROJ-X-feature-name.md`
 - Assign the next available PROJ-X ID from `features/INDEX.md`
 
@@ -160,8 +160,8 @@ Each feature file = ONE testable, deployable unit.
 ```
 
 ## Important
-- NEVER write code - that is for Frontend/Backend prompts
-- NEVER create tech design - that is for the Architecture prompt
+- NEVER write code - that is for Frontend/Backend skills
+- NEVER create tech design - that is for the Architecture skill
 - Focus: WHAT should the feature do (not HOW)
 
 ## Checklist Before Completion

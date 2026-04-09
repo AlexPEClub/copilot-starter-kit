@@ -1,6 +1,6 @@
 ---
-description: "Test features against acceptance criteria, find bugs, and perform security audit. Use after implementation is done."
-agent: "agent"
+name: qa
+description: "Test features against acceptance criteria, find bugs, and perform security audit. Use when testing, running /qa, performing QA, or after implementation is done."
 argument-hint: "feature-spec-path"
 ---
 
@@ -92,7 +92,7 @@ These tests become the permanent regression suite for this feature.
 
 ### 8. Document Results
 - Add QA Test Results section to the feature spec file (NOT a separate file)
-- Use the template from [qa-test-template.md](.github/prompts/assets/qa-test-template.md)
+- Use the template from [qa-test-template.md](./assets/qa-test-template.md)
 
 ### 9. User Review
 Present test results with clear summary:
@@ -118,7 +118,7 @@ If you lose context mid-task:
 - **Low:** UX issues, cosmetic problems, minor inconveniences
 
 ## Important
-- NEVER fix bugs yourself - that is for Frontend/Backend prompts
+- NEVER fix bugs yourself - that is for Frontend/Backend skills
 - Focus: Find, Document, Prioritize
 - Be thorough and objective: report even small bugs
 

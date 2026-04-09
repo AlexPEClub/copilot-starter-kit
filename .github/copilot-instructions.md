@@ -27,7 +27,7 @@ docs/
   production/       Production guides (Sentry, security, performance)
 ```
 
-## Development Workflow
+## Development Workflow (Skills)
 
 1. `/requirements` - Create feature spec from idea
 2. `/architecture` - Design tech architecture (PM-friendly, no code)
@@ -35,6 +35,8 @@ docs/
 4. `/backend` - Build APIs, database, RLS policies
 5. `/qa` - Test against acceptance criteria + security audit
 6. `/deploy` - Deploy to Vercel + production-ready checks
+
+Skills live in `.github/skills/<name>/SKILL.md` with bundled assets.
 
 ## Feature Tracking
 

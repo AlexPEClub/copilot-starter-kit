@@ -1,6 +1,6 @@
 ---
-description: "Design PM-friendly technical architecture for features. No code, only high-level design decisions."
-agent: "agent"
+name: architecture
+description: "Design PM-friendly technical architecture for features. No code, only high-level design decisions. Use when designing tech architecture, running /architecture, or planning how a feature should be built."
 argument-hint: "feature-spec-path"
 ---
 
